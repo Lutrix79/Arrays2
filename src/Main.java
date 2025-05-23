@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -15,8 +13,18 @@ public class Main {
 
         System.out.println("Задача №2");
         int[] cashSpending2 = {124_567, 802_333, 156_587, 133_355, 205_348};
-        Arrays.sort(cashSpending2);
-        System.out.println("Минимальная сумма трат за неделю составила " + cashSpending2[0] + " рублей. Максимальная сумма трат за неделю составила " + cashSpending2[cashSpending2.length - 1] + " рублей");
+        //    Arrays.sort(cashSpending2);
+        int maxCashSpending = cashSpending2[0];
+        int minCashSpending = cashSpending2[0];
+        for (int j : cashSpending2) {
+            if (maxCashSpending <= j) {
+                maxCashSpending = j;
+            }
+            if (minCashSpending >= j) {
+                minCashSpending = j;
+            }
+        }
+        System.out.println("Минимальная сумма трат за неделю составила " + minCashSpending + " рублей. Максимальная сумма трат за неделю составила " + maxCashSpending + " рублей");
         System.out.println();
 
         System.out.println("Задача №3");
